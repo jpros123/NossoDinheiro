@@ -1,6 +1,6 @@
 # Finanças do Casal
 
-App de controle financeiro do Igor e da Thais, feito a partir da planilha "Orçamento mensal Casal".
+App de controle financeiro da Duda e do JP, feito a partir da planilha "Orçamento mensal Casal".
 Funciona no navegador do computador, celular e tablet (dá para "instalar" na tela inicial),
 com login Google e sincronização em tempo real: o que um lança aparece no aparelho do outro na hora.
 
