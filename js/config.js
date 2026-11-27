@@ -23,17 +23,6 @@ const firebaseConfig = {
   appId: "1:393697489234:web:a6174dcbbf0f9320e74a8b"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const firebaseConfig = {
-  apiKey: "AIzaSyCwsmIKvYP_VGLJ9NTisGmIEtNm4IhtdDc",
-  authDomain: "controlefinanceiro-1a54e.firebaseapp.com",
-  projectId: "controlefinanceiro-1a54e",
-  storageBucket: "controlefinanceiro-1a54e.firebasestorage.app",
-  messagingSenderId: "111843022457",
-  appId: "1:111843022457:web:abfe41c7dce9bb9b99a6a8",
-  measurementId: "G-TGNB0R3JFH"
-};
 
 // 2) E-mails Google que podem entrar no app. Os dois compartilham os mesmos dados.
 //    (Coloque os mesmos e-mails no arquivo firestore.rules.)
