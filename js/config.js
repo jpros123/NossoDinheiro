@@ -7,13 +7,6 @@
 //    Configurações do projeto → Seus apps → App da Web.
 //    Enquanto estiver vazio, o app roda em "modo local" (dados só neste
 //    navegador, sem login e sem sincronização) — útil para testar.
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyByd_zyDeadQaZaZGVOWLCbsZ0b4NqFd34",
   authDomain: "nosso-dinheiro-cf416.firebaseapp.com",
