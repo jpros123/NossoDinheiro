@@ -1,21 +1,4 @@
-// =====================================================================
-//  CONFIGURAÇÃO — edite este arquivo depois de criar o projeto Firebase
-//  (passo a passo no README.md)
-// =====================================================================
-
-// 1) Cole aqui o objeto "firebaseConfig" que o Firebase mostra em
-//    Configurações do projeto → Seus apps → App da Web.
-//    Enquanto estiver vazio, o app roda em "modo local" (dados só neste
-//    navegador, sem login e sem sincronização) — útil para testar.
-npm install firebase
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyByd_zyDeadQaZaZGVOWLCbsZ0b4NqFd34",
   authDomain: "nosso-dinheiro-cf416.firebaseapp.com",
   projectId: "nosso-dinheiro-cf416",
@@ -24,19 +7,13 @@ const firebaseConfig = {
   appId: "1:393697489234:web:a6174dcbbf0f9320e74a8b"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// 2) E-mails Google que podem entrar no app. Os dois compartilham os mesmos dados.
-//    (Coloque os mesmos e-mails no arquivo firestore.rules.)
 export const EMAILS_PERMITIDOS = [
   "joaoppros@gmail.com",
   "eduardagmel@gmail.com"
 ];
 
-// 3) Identificador da "casa" no banco. Pode deixar assim.
 export const CASA_ID = "casal";
 
-// Valores padrão (podem ser alterados depois na aba Ajustes do app)
 export const PADRAO = {
   cartoes: ["Itau Black", "Cresol Igor", "Nubank Igor", "Nu Thais", "Itau Click Thais", "Itau MC Thais"],
   pessoas: ["Jp", "Duda", "Casal"],
