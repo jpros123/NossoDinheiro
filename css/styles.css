@@ -1,27 +1,47 @@
-root {
-  --fonte: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --fundo: #120e2b;
-  --fundo-2: #1b1442;
-  --superficie: rgba(255, 255, 255, .055);
-  --superficie-2: rgba(255, 255, 255, .08);
-  --texto: #f5f3ff;
-  --texto-2: #b0acd9;
-  --linha: rgba(255, 255, 255, .11);
-  --marca: #8b8cff;
-  --marca-forte: #a89bff;
-  --marca-suave: rgba(139, 140, 255, .18);
-  --grad: linear-gradient(135deg, #6f7bff 0%, #a477ea 55%, #e88cc6 100%);
-  --positivo: #6ee7a0;
-  --negativo: #ff7f93;
-  --pendente: #f6c05a;
-  --pendente-fundo: rgba(246, 192, 90, .14);
-  --pago-fundo: rgba(110, 231, 160, .14);
-  --reservado: #93b4ff;
-  --reservado-fundo: rgba(147, 180, 255, .16);
-  --sombra: 0 8px 30px rgba(5, 3, 25, .35);
-  --raio: 20px;
+:root {
+  --fonte: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fundo: #f4f2ec;
+  --superficie: #ffffff;
+  --superficie-2: #f8f7f3;
+  --texto: #1b2420;
+  --texto-2: #5d6a64;
+  --linha: #e3e0d7;
+  --marca: #1f6f5c;
+  --marca-forte: #175847;
+  --marca-suave: #e2efe9;
+  --positivo: #1f7a4d;
+  --negativo: #c23b3b;
+  --pendente: #b7791f;
+  --pendente-fundo: #fbf0dc;
+  --pago-fundo: #e1f2e8;
+  --reservado: #3b6fb6;
+  --reservado-fundo: #e3ecf8;
+  --sombra: 0 1px 2px rgba(20, 30, 25, .06), 0 4px 16px rgba(20, 30, 25, .05);
+  --raio: 16px;
   --nav-h: 64px;
-  color-scheme: dark;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #101412;
+    --superficie: #181d1b;
+    --superficie-2: #1f2522;
+    --texto: #e8ece9;
+    --texto-2: #9aa7a1;
+    --linha: #2b3330;
+    --marca: #4fb89a;
+    --marca-forte: #6fcdb1;
+    --marca-suave: #1d322b;
+    --positivo: #5cc48c;
+    --negativo: #ef7b7b;
+    --pendente: #e6b35a;
+    --pendente-fundo: #352a17;
+    --pago-fundo: #18352a;
+    --reservado: #86aee6;
+    --reservado-fundo: #1c2a3d;
+    --sombra: 0 1px 2px rgba(0, 0, 0, .3);
+    color-scheme: dark;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -112,7 +132,7 @@ h3 { font-size: 1rem; font-weight: 650; }
 .btn:hover { border-color: var(--texto-2); }
 .btn-primario { background: var(--marca); border-color: var(--marca); color: #fff; }
 .btn-primario:hover { background: var(--marca-forte); border-color: var(--marca-forte); }
-
+@media (prefers-color-scheme: dark) { .btn-primario { color: #0d1513; } }
 .btn.perigo { color: var(--negativo); }
 .btn.arquivo { cursor: pointer; }
 .link { border: 0; background: none; color: var(--marca); font-weight: 600; font-size: .85rem; padding: 0; }
@@ -285,118 +305,4 @@ input:focus, select:focus { outline: 2px solid var(--marca); outline-offset: 1px
 .secao-titulo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-top: 18px; padding-top: 20px; border-top: 2px dashed var(--linha); scroll-margin-top: 70px; }
 .secao-titulo.sem-borda { margin-top: 0; padding-top: 0; border-top: 0; }
 .secao-titulo h2 { font-size: 1.15rem; }
-
-
-/* =====================================================================
-   TEMA MODERNO — roxo/índigo com gradiente e superfícies de vidro
-   ===================================================================== */
-body {
-  background:
-    radial-gradient(900px 500px at 8% -10%, rgba(111, 123, 255, .28), transparent 60%),
-    radial-gradient(800px 500px at 100% 0%, rgba(232, 140, 198, .18), transparent 60%),
-    linear-gradient(180deg, var(--fundo-2), var(--fundo) 60%);
-  background-attachment: fixed;
-  min-height: 100dvh;
-}
-h2 { font-weight: 800; letter-spacing: -.02em; }
-::selection { background: rgba(139, 140, 255, .45); }
-
-.topo { background: color-mix(in srgb, var(--fundo) 70%, transparent); }
-.btn-icone:hover { background: var(--superficie-2); }
-.mes-atual:hover { background: var(--superficie-2); }
-
-.cartao, .kpi, .login-card, .pill {
-  background: var(--superficie);
-  border: 1px solid var(--linha);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-}
-.cartao { transition: border-color .2s, transform .2s; }
-.cartao:hover { border-color: rgba(255, 255, 255, .2); }
-.destaque-vazio { background: var(--marca-suave); border-color: rgba(139, 140, 255, .3); }
-
-/* KPI positivo vira o card principal em gradiente */
-.kpi { border-radius: var(--raio); }
-.kpi.positivo {
-  background: var(--grad); border-color: transparent; color: #fff;
-  box-shadow: 0 12px 34px rgba(124, 108, 240, .38);
-}
-.kpi.positivo span, .kpi.positivo small { color: rgba(255, 255, 255, .85); }
-.kpi.positivo strong { color: #fff; font-size: 1.6rem; }
-.kpi.negativo { background: rgba(255, 127, 147, .12); border-color: rgba(255, 127, 147, .35); }
-
-/* Botões */
-.btn { background: var(--superficie-2); border-color: var(--linha); border-radius: 14px; }
-.btn:hover { border-color: var(--marca); background: rgba(255, 255, 255, .1); }
-.btn-primario, .btn-primario:hover {
-  background: var(--grad); border-color: transparent; color: #fff;
-  box-shadow: 0 6px 18px rgba(124, 108, 240, .35);
-}
-.btn-primario:hover { filter: brightness(1.08); }
-.btn-google { background: #fff; color: #1b1442; border: 0; }
-.btn.perigo { color: var(--negativo); }
-.link { color: var(--marca-forte); }
-.fab { background: var(--grad); color: #fff; border-radius: 20px; box-shadow: 0 10px 28px rgba(124, 108, 240, .5); }
-
-/* Menu lateral flutuante */
-@media (min-width: 900px) {
-  .app { grid-template-columns: 252px 1fr; gap: 0; }
-  .nav-lateral {
-    margin: 14px 0 14px 14px; height: calc(100dvh - 28px); border: 1px solid var(--linha);
-    border-radius: 24px; background: var(--superficie); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  }
-  .nav .nav-item.ativo { background: var(--grad); color: #fff; box-shadow: 0 6px 18px rgba(124, 108, 240, .35); }
-  .nav .nav-item:hover:not(.ativo) { background: var(--superficie-2); }
-}
-.marca { color: var(--marca-forte); }
-.nav-item { transition: background .2s, color .2s; }
-.nav-item.ativo { color: #fff; }
-.nav-item.ativo svg { background: var(--grad); color: #fff; }
-.nav-inferior {
-  background: color-mix(in srgb, var(--fundo-2) 80%, transparent); border-top: 1px solid var(--linha);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-}
-
-/* Chips: ativo em gradiente */
-.chip { background: var(--superficie); }
-.chip.ativo { background: var(--grad); color: #fff; border-color: transparent; }
-.chip.ativo b { color: #fff; }
-.chip.fixo button { background: var(--superficie-2); }
-
-/* Status */
-.chip-status.pago { background: var(--pago-fundo); }
-.check { background: transparent; border-color: var(--texto-2); }
-.check.on { background: var(--positivo); border-color: var(--positivo); color: #0d0a24; }
-.tag-fixa.on { background: var(--marca-suave); color: var(--marca-forte); }
-
-/* Barras */
-.trilho, .mini-trilho { background: rgba(255, 255, 255, .08); border-color: transparent; }
-.preench { background: var(--grad); }
-.preench.estouro { background: linear-gradient(90deg, #ff7f93, #ffb199); }
-
-/* Avisos */
-.aviso { border: 1px solid rgba(246, 192, 90, .3); }
-.fatura-info { background: rgba(255, 255, 255, .05); }
-.parc { background: rgba(255, 255, 255, .08); color: var(--texto); }
-
-/* Formulários e modal */
-.linha-add input, .linha-cat input, .campo input, .campo select, .campo textarea {
-  background: rgba(255, 255, 255, .06); border-color: var(--linha); color: var(--texto);
-}
-.campo select option { background: #1b1442; color: var(--texto); }
-input:focus, select:focus, textarea:focus { outline: 2px solid var(--marca); outline-offset: 1px; }
-.modal { background: #1a1440; border: 1px solid var(--linha); color: var(--texto); }
-.modal::backdrop { background: rgba(8, 5, 28, .65); backdrop-filter: blur(4px); }
-.escolha { background: rgba(255, 255, 255, .05); }
-.escolha:hover { border-color: var(--marca); background: var(--marca-suave); }
-.segmentado input:checked + span { border-color: var(--marca); background: var(--marca-suave); }
-.check-linha input { accent-color: var(--marca); }
-
-/* Toast e login */
-.toast { background: #fff; color: #1b1442; font-weight: 600; }
-.logo-grande { color: var(--marca-forte); }
-.login-card { box-shadow: var(--sombra); }
-.secao-titulo { border-top-color: var(--linha); }
-
-/* Scrollbars discretas */
-* { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .2) transparent; }
 
